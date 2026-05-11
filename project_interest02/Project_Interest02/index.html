@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rean | Interest</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+<style>
+
+/* 🌸 GLOBAL */
+body {
+  font-family: 'Times New Roman', serif;
+  background: #f5eee6;
+  color: #3b2a1d;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* subtle paper texture feel */
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 30%, rgba(139,94,60,0.15), transparent 40%),
+              radial-gradient(circle at 80% 70%, rgba(160,120,90,0.15), transparent 40%);
+  z-index: -1;
+}
+
+/* 🌿 NAVBAR */
+.navbar {
+  background: rgba(245, 238, 230, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(139,94,60,0.2);
+}
+
+.navbar-brand {
+  font-style: italic;
+  color: #5a3e2b !important;
+}
+
+.nav-link {
+  color: #4a3425 !important;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  background: #8b5e3c;
+  left: 0;
+  bottom: 0;
+  transition: 0.4s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* 💼 HERO */
+.hero {
+  min-height: 100vh;
+  background: 
+    url('assets/reanbg.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+/* IMAGE */
+.hero-img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 4px solid #d2b48c;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* TEXT */
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-style: italic;
+  color: #fdfcfc;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #000000;
+  max-width: 500px;
+}
+
+/* 🌸 SECTION */
+.section {
+  padding: 100px 20px;
+}
+
+/* ✨ TITLE */
+h2 {
+  font-style: italic;
+  font-size: 2.5rem;
+  color: #5a3e2b;
+}
+
+/* 🪞 CARDS */
+.card-custom {
+  border: none;
+  background: transparent;
+  text-align: left;
+  transition: 0.5s;
+}
+
+.card-custom img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  filter: grayscale(20%);
+  transition: 0.5s;
+}
+
+.card-custom:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.card-body h5 {
+  font-style: italic;
+  color: #4a3425;
+}
+
+/* 🎞 FRAME STYLE */
+.frame {
+  background: #fdfaf6;
+  padding: 15px;
+  border: 8px solid #d2b48c;
+  border-radius: 10px;
+  box-shadow: 
+    0 10px 25px rgba(0,0,0,0.15),
+    inset 0 0 10px rgba(0,0,0,0.05);
+  transition: 0.4s ease;
+}
+
+.frame video {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+.frame-caption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #5a3e2b;
+}
+
+.frame:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* 💌 CONNECT */
+.connect a {
+  color: #5a3e2b;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.connect a:hover {
+  transform: translateY(-5px);
+  color: #a47148;
+}
+
+.custom-container {
+  background: rgba(255, 248, 240, 0.7);
+  padding: 50px;
+  border-radius: 30px;
+}
+
+/* 🕊 FOOTER */
+footer {
+  background: #ede0d4;
+  padding: 30px;
+  font-style: italic;
+  color: #7a5c45;
+}
+
+/* 📱 RESPONSIVE */
+@media(max-width:768px){
+  .hero {
+    text-align: center;
+  }
+
+  .hero-text {
+    margin-top: 30px;
+  }
+
+  .hero-img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Rean</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#interest">Interest</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+        <li class="nav-item"><a class="nav-link" href="#connect">Connect</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- LEFT: IMAGE -->
+      <div class="col-md-5 text-center">
+        <img src="assets/reanprofile.png" alt="profile" class="hero-img">
+      </div>
+
+      <!-- RIGHT: TEXT -->
+      <div class="col-md-7 hero-text">
+        <h1>Hi! This is Rean </h1>
+        <p>
+         I am someone who finds beauty in quiet moments and meaning in everyday life. Music allows me to express emotions beyond words, while movement keeps me grounded and focused.
+I enjoy exploring new experiences, whether through travel or simple moments that become lasting memories. I believe that every journey, no matter how small, shapes who we are becoming.
+Through passion and curiosity, I continue to grow and discover more about myself each day.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INTEREST -->
+<section id="interest" class="section container">
+  <div class="text-center mb-5">
+    <h2>My Interests</h2>
+    <p class="text-muted">Fragments of what I love</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card-custom">
+        <img src="assets/piano.jpg" alt="piano">
+        <div class="card-body">
+          <h5>Piano</h5>
+          <p class="text-muted">Soft melodies that echo emotions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card-custom">
+        <img src="assets/badminton.jpg" alt="badminton">
+        <div class="card-body">
+          <h5>Badminton</h5>
+          <p class="text-muted">Movement, rhythm, and focus.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card-custom">
+        <img src="assets/travel.jpg" alt="travel">
+        <div class="card-body">
+          <h5>Travel</h5>
+          <p class="text-muted">Collecting places like memories.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery section">
+  <div class="container text-center mb-5">
+    <h2>Gallery</h2>
+    <p class="text-muted">Proof of my progress</p>
+  </div>
+
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+
+      <!-- BOX 1 -->
+      <div class="col-md-5">
+        <div class="frame">
+          <video src="assets/piano.mp4" autoplay muted loop></video>
+          <p class="frame-caption">Piano Moments</p>
+        </div>
+      </div>
+
+      <!-- BOX 2 -->
+      <div class="col-md-5">
+        <div class="frame">
+          <video src="assets/badminton.mp4" autoplay muted loop></video>
+          <p class="frame-caption">On the Court</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section id="connect" class="section text-center connect"> 
+  <div class="container custom-container"> 
+    <h2>Connect With Me</h2> 
+    <p class="mb-5">Let’s stay in touch</p> 
+
+    <div class="d-flex justify-content-center gap-5"> 
+      <a href="mailto:vince@example.com"> 
+        <i class="fas fa-envelope fa-2x"></i> 
+        <p class="mt-2">Email</p> 
+      </a> <a href="https://facebook.com" target="_blank" rel="noopener"> 
+        <i class="fab fa-facebook fa-2x"></i> 
+        <p class="mt-2">Facebook</p> 
+      </a> <a href="https://www.instagram.com/onthe_rean/" target="_blank" rel="noopener"> 
+        <i class="fab fa-instagram fa-2x"></i> 
+        <p class="mt-2">Instagram</p> 
+      </a> </div> </div> </section>
+
+<footer class="text-center">
+  <p>&copy; 2026 Rean — A soft vintage story.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
